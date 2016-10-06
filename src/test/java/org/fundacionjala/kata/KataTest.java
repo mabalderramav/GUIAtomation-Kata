@@ -5,9 +5,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by AldoBalderrama on 10/4/2016.
+ * This kata Test.
  */
 public class KataTest {
+    /**
+     * this method calculate High And Low the option 1.
+     */
     @Test
     public void calculateHighAndLow1() {
         final String text = "1 2 3 4 5";
@@ -16,6 +19,9 @@ public class KataTest {
         assertEquals(expected, result);
     }
 
+    /**
+     * this method calculate High And Low the option 2.
+     */
     @Test
     public void calculateHighAndLow2() {
         final String text = "1 2 -3 4 5";
@@ -24,6 +30,9 @@ public class KataTest {
         assertEquals(expected, result);
     }
 
+    /**
+     * this method calculate High And Low the option 1.
+     */
     @Test
     public void calculateHighAndLow3() {
         final String text = "1 9 3 4 -5";

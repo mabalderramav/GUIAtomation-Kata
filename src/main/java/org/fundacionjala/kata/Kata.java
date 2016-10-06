@@ -1,9 +1,14 @@
 package org.fundacionjala.kata;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+
 /**
  * This Class about Kata.
  */
-public final class Kata {
+final class Kata {
+
+    private static final String BLANK = " ";
 
     /**
      * Private constructor.
@@ -17,43 +22,16 @@ public final class Kata {
      * @param text text a calculate.
      * @return text with mayor and minor number.
      */
-    public static String calculateHighAndLow(String text) {
-        final String[] arrayNumber = text.split(" ");
-        return String.valueOf(calculateMayorNumber(arrayNumber))
-                + " "
-                + String.valueOf(calculateMinorNumber(arrayNumber));
-    }
-
-    /**
-     * This method calculate minor number.
-     *
-     * @param arrayNumber Array number a calculate.
-     * @return Minor number of array text.
-     */
-    private static int calculateMinorNumber(String[] arrayNumber) {
-        int minor = Integer.parseInt(arrayNumber[0]);
-        for (String numberString : arrayNumber) {
-            int number = Integer.parseInt(numberString);
-            if (number < minor) {
-                minor = number;
-            }
+    static String calculateHighAndLow(final String text) {
+        final String[] arrayNumber = text.split(BLANK);
+        final OptionalInt optionalIntHigh = Arrays.stream(arrayNumber).mapToInt(Integer::parseInt).max();
+        final OptionalInt optionalIntLow = Arrays.stream(arrayNumber).mapToInt(Integer::parseInt).min();
+        int high = 0;
+        int low = 0;
+        if (optionalIntHigh.isPresent() && optionalIntLow.isPresent()) {
+            high = optionalIntHigh.getAsInt();
+            low = optionalIntLow.getAsInt();
         }
-        return minor;
-    }
-
-    /**
-     * This method calculate mayor number.
-     * @param arrayNumber Array number a calculate.
-     * @return Mayor number of array text.
-     */
-    private static int calculateMayorNumber(String[] arrayNumber) {
-        int mayor = Integer.parseInt(arrayNumber[0]);
-        for (String numberString : arrayNumber) {
-            int number = Integer.parseInt(numberString);
-            if (number > mayor) {
-                mayor = number;
-            }
-        }
-        return mayor;
+        return String.format("%s %s", high, low);
     }
 }

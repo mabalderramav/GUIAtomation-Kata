@@ -9,8 +9,6 @@ checkstyle{
 }
 apply plugin: 'pmd'
 
-sourceCompatibility = 1.5
-
 repositories {
     mavenCentral()
 }

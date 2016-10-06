@@ -1,4 +1,13 @@
-*.class
+#Custome#
+.idea/
+.gradle/
+gradle/
+target/
+build/
+gradlew
+gradlew.bat
+/cucumber-html-report/
+#Custome#
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

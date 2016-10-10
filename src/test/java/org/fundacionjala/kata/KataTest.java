@@ -28,6 +28,8 @@ public class KataTest {
         final String expected = "5 -3";
         String result = Kata.calculateHighAndLow(text);
         assertEquals(expected, result);
+
+
     }
 
     /**
@@ -38,6 +40,28 @@ public class KataTest {
         final String text = "1 9 3 4 -5";
         final String expected = "9 -5";
         String result = Kata.calculateHighAndLow(text);
+        assertEquals(expected, result);
+    }
+
+    /**
+     * this method make complement DNA option 1.
+     */
+    @Test
+    public void makeComplementDNA1() {
+        final String text = "ATTGC";
+        final String expected = "TAACG";
+        String result = Kata.makeComplement(text);
+        assertEquals(expected, result);
+    }
+
+    /**
+     * this method make complement DNA option 1.
+     */
+    @Test
+    public void makeComplementDNA2() {
+        final String text = "GTAT";
+        final String expected = "CATA";
+        String result = Kata.makeComplement(text);
         assertEquals(expected, result);
     }
 }
